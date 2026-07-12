@@ -3,116 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SynapseTechnologies</title>
-      <link rel="icon" type="image/jpg" href="logo.jpg">
+    <title>Synapse Technologies - Admin Dashboard</title>
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Georgia, Garamond, serif;
-            background-color: #fcfcfc;
-            color: #1e293b;
+        /* Reset and Base Styles */
+        * {
             margin: 0;
             padding: 0;
-            line-height: 1.8;
+            box-sizing: border-box;
         }
-        .container {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 60px 20px;
+
+        body {
+            font-family: 'Courier New', Courier, monospace; /* Tech/Blueprint font look */
+            background-color: #ffffff;
+            color: #000000;
+            min-height: 100vh;
+            padding: 40px;
+            position: relative;
         }
-        header {
-            border-bottom: 2px solid #0f172a;
-            padding-bottom: 20px;
-            margin-bottom: 60px;
+
+        /* Top Header */
+        .header-title {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            border: 1px dashed #000000;
+            padding: 5px 15px;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
         }
-        .site-title {
-            font-size: 2.2rem;
-            font-weight: 800;
-            letter-spacing: -0.03em;
-            color: #0f172a;
-            margin: 0;
+
+        /* Bottom Badge */
+        .admin-badge {
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            border: 1px dashed #000000;
+            padding: 10px 25px;
+            font-size: 1.8rem;
         }
-        .site-subtitle {
-            font-size: 1rem;
-            color: #64748b;
-            margin: 5px 0 0 0;
+
+        /* Main Blueprint Container Layout */
+        .blueprint-container {
+            display: flex;
+            gap: 40px;
+            margin-top: 60px;
+            max-width: 900px;
+        }
+
+        /* Column containing only the 5 squares */
+        .squares-column {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .square {
+            width: 90px;
+            height: 90px;
+            border: 1.5px solid #000000;
+            background: transparent;
+        }
+
+        /* Column containing the info rows */
+        .info-column {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            justify-content: space-around; /* Spreads text rows evenly next to squares */
+            flex-grow: 1;
+        }
+
+        /* Text Content & Animation */
+        .text-content {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .text-content h3 {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 4px;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-family: monospace;
         }
-        .post {
-            margin-bottom: 60px;
-            padding-bottom: 40px;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        .post:last-child {
-            border-bottom: none;
-        }
-        .post-meta {
-            font-family: monospace;
-            font-size: 0.85rem;
-            color: #2563eb;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-        .post-title {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: #0f172a;
-            margin: 0 0 15px 0;
+
+        .text-content p {
+            font-size: 0.9rem;
             line-height: 1.3;
         }
-        .post-content {
-            font-size: 1.1rem;
-            color: #334155;
-        }
-        .post-content p {
-            margin: 0 0 20px 0;
-        }
-        .post-content strong {
-            color: #0f172a;
-        }
-        footer {
-            margin-top: 80px;
-            font-family: monospace;
-            font-size: 0.85rem;
-            color: #94a3b8;
-            text-align: center;
+
+        /* Staggered Delays for Content Fade-In */
+        .info-column div:nth-child(1) { animation-delay: 0.1s; }
+        .info-column div:nth-child(2) { animation-delay: 0.25s; }
+        .info-column div:nth-child(3) { animation-delay: 0.4s; }
+        .info-column div:nth-child(4) { animation-delay: 0.55s; }
+        .info-column div:nth-child(5) { animation-delay: 0.7s; }
+
+        /* Keyframes for the Bottom Fade-In Effect */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <h1 class="site-title">SynapseTechnologies</h1>
-        <div class="site-subtitle">Shaping a better future</div>
-    </header>
+    <div class="header-title">SYNAPSE TECHNOLOGIES</div>
 
-    <main>
-        <!-- BLOG POST 1 -->
-        <article class="post">
-            <div class="post-meta">archived posts</div>
-            <h2 class="post-title">Pathogenic Research in a Biological Perspective</h2>
-            <div class="post-content">
-                <p>At Synapse Technologies, we are shifting our focus toward the ultimate frontier of engineering: the creation and cultivation of biological life systems from the ground up.</p>
-                <p>Beginning with creating a real, biological being from nothing.</p>
+    <div class="blueprint-container">
+        
+        <div class="squares-column">
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+            <div class="square"></div>
+        </div>
+
+        <div class="info-column">
+            <div class="text-content">
+                <h3></h3>
+                <p>All modules functioning within optimal limits. Data streams running functionally.</p>
             </div>
-        </article>
-
-        <!-- BLOG POST 2 -->
-        <article class="post">
-            <div class="post-meta">Archived posts</div>
-            <h2 class="post-title"></h2>
-            <div class="post-content">
-                <p>[Access to this blog post has been denied in accordance to Synapse Technologies. All mentions to this blog post can be found in the admin portal.]</p>
-                <p> </p>
+            <div class="text-content">
+                <h3>STATUS: PROJECT CR</h3>
+                <p>Tracking behavioral differences. Current condition is to be decided.</p>
             </div>
-        </article>
-    </main>
+            <div class="text-content">
+                <h3>security condition</h3>
+                <p>Currently stable.</p>
+            </div>
+            <div class="text-content">
+                <h3>Remote Access</h3>
+                <p>Administrator credentials confirmed from outside source. If this was a mistake, please terminate the person next to you.</p>
+            </div>
+            <div class="text-content">
+                <h3>Device Status</h3>
+                <p>ON HOLD.</p>
+            </div>
+        </div>
 
-    <footer>
+    </div>
 
-<footer>
-    &copy; 2026 Synapse Technologies. All rights reserved.
+    <div class="admin-badge">administrator</div>
+
 </body>
 </html>
