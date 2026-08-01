@@ -1,15 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Example YouTube Embed -->
-<iframe 
-  width="560" 
-  height="315" 
-  src="https://www.youtube.com/embed/ztMS6Lpgne8?si=4Z0aiIO_dsuH_aj2" 
-  title="YouTube video player" 
-  frameborder="0" 
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-  allowfullscreen>
-</iframe>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recreation</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #000000;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    .card {
+      position: relative;
+      width: 320px;
+      height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      color: #ffffff;
+      
+      /* Dark red abstract/cloudy texture background simulation */
+      background: 
+        radial-gradient(circle at 50% 30%, #bf0d0d 0%, transparent 40%),
+        radial-gradient(circle at 20% 70%, #680000 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, #a43807 0%, transparent 40%),
+        radial-gradient(circle at 40% 90%, #3e0202 0%, transparent 60%),
+        radial-gradient(circle at 70% 20%, #4a0000 0%, transparent 50%),
+        #120000;
+      
+      /* Subtle dark border/glow to match pixel artwork borders */
+      box-shadow: inset 0 0 30px #000000, 0 0 1px #000000;
+    }
+
+    .card p {
+      font-size: 11px;
+      line-height: 1.6;
+      letter-spacing: 0.2px;
+      color: #e5e5e5;
+      text-shadow: 1px 1px 2px #000000;
+      /* Pixelated font rendering */
+      -webkit-font-smoothing: none;
+      -moz-osx-font-smoothing: unset;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <p>if you are a brilliant mind, we are looking for you.</p>
+    <p>Please message for further instructions.</p>
+  </div>
+
 </body>
 </html>
